@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: actions
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: actions
+    app.kubernetes.io/part-of: actions
+  name: actions
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: actions
+status:
+  loadBalancer: {}
